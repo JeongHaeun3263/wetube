@@ -1,14 +1,29 @@
 {
   "name": "wetube",
   "version": "1.0.0",
-  "description": "Cloning Youtube with Vanilla JS and NodeJS",
+  "description": "Cloning Youtube with vanillaJs and NodeJs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec babel-node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JeongHaeun3263/wetube.git"
   },
   "author": "Grace Jeong",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JeongHaeun3263/wetube/issues"
+  },
+  "homepage": "https://github.com/JeongHaeun3263/wetube#readme",
   "dependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/node": "^7.10.5",
+    "@babel/preset-env": "^7.11.5",
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }
