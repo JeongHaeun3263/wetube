@@ -3,17 +3,11 @@ import morgan from 'morgan';
 import helmet from 'helmet';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
+import globalRouter from './routers/globalRouter';
+import userRouter from './routers/userRouter';
+import videoRouter from './routers/videoRouter';
 
 const app = express();
-
-const PORT = 4000;
-
-const handleListening = () =>
-  console.log(`Listening on:http://localhost:${PORT}`);
-
-const handleHome = (req, res) => res.send('Hi, from home');
-
-const handleProfile = (req, res) => res.send('You are on my profile');
 
 // Middleware
 app.use(cookieParser());
@@ -23,8 +17,8 @@ app.use(helmet());
 app.use(morgan('dev'));
 
 // Route
-app.get('/', handleHome);
+app.use('/', globalRouter);
+app.use('/user', userRouter);
+app.use('/video', videoRouter);
 
-app.get('/profile', handleProfile);
-
-app.listen(PORT, handleListening);
+export default app;
