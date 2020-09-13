@@ -10,6 +10,9 @@ import routes from './routes';
 
 const app = express();
 
+// use 'pug' for views(template)
+app.set('view engine', 'pug');
+
 // Middleware
 app.use(cookieParser());
 app.use(bodyParser.json());
