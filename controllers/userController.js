@@ -1,10 +1,22 @@
+import routes from '../routes';
+
 export const getJoin = (req, res) => {
   res.render('join', { pageTitle: 'Join' });
 };
 
 export const postJoin = (req, res) => {
-  console.log(req.body);
-  res.render('join', { pageTitle: 'Join' });
+  // to get the body inside of req in ES6 way
+  const {
+    body: { firstName, lastName, email, password, password2 },
+  } = req;
+  if (password !== password2) {
+    res.status(400);
+    res.render('join', { pageTitle: 'Join' });
+  } else {
+    // To Do: Register User
+    // To Do: Log user in
+    res.redirect(routes.home);
+  }
 };
 
 export const login = (req, res) => res.render('login', { pageTitle: 'Login' });
