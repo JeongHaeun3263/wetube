@@ -5,3 +5,4 @@ package-lock.json
 uploads 
 # dotenv environment variables file
 .env
+static
