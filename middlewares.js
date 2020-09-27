@@ -8,7 +8,7 @@ export const localMiddleware = (req, res, next) => {
   res.locals.routes = routes;
   // for the test
   res.locals.user = {
-    isAuthenticated: true,
+    isAuthenticated: false,
     id: 1,
   };
   next();
